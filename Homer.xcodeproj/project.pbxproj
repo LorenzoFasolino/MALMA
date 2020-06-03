@@ -128,6 +128,7 @@
 		33B9D7ED23FA8D6300BE1FEA /* CategoryTasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryTasks.storyboard; sourceTree = "<group>"; };
 		33B9D7EF23FA8DDC00BE1FEA /* CategoryTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTasksViewController.swift; sourceTree = "<group>"; };
 		33B9D7F123FA981400BE1FEA /* CategoryTasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTasksCell.swift; sourceTree = "<group>"; };
+		6B540864248792A00090D07D /* Greenist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Greenist.entitlements; sourceTree = "<group>"; };
 		6B5CA63123FAD08F0059D9BB /* AchievementContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementContentView.swift; sourceTree = "<group>"; };
 		6B81B9D723F59BBF000BFB0A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6B81B9E423F6ABD4000BFB0A /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 		23543D0323F45EB60080BDFE /* Homer */ = {
 			isa = PBXGroup;
 			children = (
+				6B540864248792A00090D07D /* Greenist.entitlements */,
 				9A88D59F23FBEC6F00FD65BB /* Constants */,
 				9A88D59A23FBEA5600FD65BB /* PrioritySystem */,
 				9099D75A23FAA0110063C588 /* AchievementModels */,
@@ -751,14 +753,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Homer/Greenist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K8WJKQA676;
+				DEVELOPMENT_TEAM = 68XJL248VM;
 				INFOPLIST_FILE = Homer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = malma.Greenist;
+				PRODUCT_BUNDLE_IDENTIFIER = alessandrodestefano.Greenist;
 				PRODUCT_NAME = Greenist;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -769,14 +772,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Homer/Greenist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K8WJKQA676;
+				DEVELOPMENT_TEAM = 68XJL248VM;
 				INFOPLIST_FILE = Homer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = malma.Greenist;
+				PRODUCT_BUNDLE_IDENTIFIER = alessandrodestefano.Greenist;
 				PRODUCT_NAME = Greenist;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

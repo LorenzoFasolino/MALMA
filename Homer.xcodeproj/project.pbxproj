@@ -45,6 +45,8 @@
 		33B9D7F223FA981400BE1FEA /* CategoryTasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9D7F123FA981400BE1FEA /* CategoryTasksCell.swift */; };
 		6B540866248794A50090D07D /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B540865248794A50090D07D /* AppIntent.swift */; };
 		6B54086A2487981A0090D07D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5408692487981A0090D07D /* MainController.swift */; };
+		6B5408722488E2CA0090D07D /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5408712488E2CA0090D07D /* IntentHandler.swift */; };
+		6B5408762488E2CA0090D07D /* GreenIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6B54086F2488E2CA0090D07D /* GreenIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6B5CA63223FAD08F0059D9BB /* AchievementContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5CA63123FAD08F0059D9BB /* AchievementContentView.swift */; };
 		6B81B9D823F59BBF000BFB0A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B81B9D723F59BBF000BFB0A /* Home.storyboard */; };
 		6B81B9E523F6ABD4000BFB0A /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B81B9E423F6ABD4000BFB0A /* Categories.storyboard */; };
@@ -85,7 +87,28 @@
 			remoteGlobalIDString = 23543D0023F45EB60080BDFE;
 			remoteInfo = Homer;
 		};
+		6B5408742488E2CA0090D07D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23543CF923F45EB60080BDFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B54086E2488E2CA0090D07D;
+			remoteInfo = GreenIntents;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6B54087A2488E2CA0090D07D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6B5408762488E2CA0090D07D /* GreenIntents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		235307C823F708ED002EBD1F /* Homer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homer.xcdatamodel; sourceTree = "<group>"; };
@@ -133,6 +156,9 @@
 		6B540864248792A00090D07D /* Greenist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Greenist.entitlements; sourceTree = "<group>"; };
 		6B540865248794A50090D07D /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		6B5408692487981A0090D07D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		6B54086F2488E2CA0090D07D /* GreenIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GreenIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B5408712488E2CA0090D07D /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		6B5408732488E2CA0090D07D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B5CA63123FAD08F0059D9BB /* AchievementContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementContentView.swift; sourceTree = "<group>"; };
 		6B81B9D723F59BBF000BFB0A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6B81B9E423F6ABD4000BFB0A /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
@@ -180,6 +206,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6B54086C2488E2CA0090D07D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -189,6 +222,7 @@
 				23543D0323F45EB60080BDFE /* Homer */,
 				23543D1D23F45EB70080BDFE /* HomerTests */,
 				23543D2823F45EB70080BDFE /* HomerUITests */,
+				6B5408702488E2CA0090D07D /* GreenIntents */,
 				23543D0223F45EB60080BDFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -199,6 +233,7 @@
 				23543D0123F45EB60080BDFE /* Greenist.app */,
 				23543D1A23F45EB70080BDFE /* HomerTests.xctest */,
 				23543D2523F45EB70080BDFE /* HomerUITests.xctest */,
+				6B54086F2488E2CA0090D07D /* GreenIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,6 +329,15 @@
 				33B9D7EF23FA8DDC00BE1FEA /* CategoryTasksViewController.swift */,
 			);
 			name = CategoryTasks;
+			sourceTree = "<group>";
+		};
+		6B5408702488E2CA0090D07D /* GreenIntents */ = {
+			isa = PBXGroup;
+			children = (
+				6B5408712488E2CA0090D07D /* IntentHandler.swift */,
+				6B5408732488E2CA0090D07D /* Info.plist */,
+			);
+			path = GreenIntents;
 			sourceTree = "<group>";
 		};
 		6B81B9E323F6ABC2000BFB0A /* Categories */ = {
@@ -411,10 +455,12 @@
 				23543CFD23F45EB60080BDFE /* Sources */,
 				23543CFE23F45EB60080BDFE /* Frameworks */,
 				23543CFF23F45EB60080BDFE /* Resources */,
+				6B54087A2488E2CA0090D07D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6B5408752488E2CA0090D07D /* PBXTargetDependency */,
 			);
 			name = Homer;
 			productName = Homer;
@@ -457,13 +503,30 @@
 			productReference = 23543D2523F45EB70080BDFE /* HomerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		6B54086E2488E2CA0090D07D /* GreenIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B5408772488E2CA0090D07D /* Build configuration list for PBXNativeTarget "GreenIntents" */;
+			buildPhases = (
+				6B54086B2488E2CA0090D07D /* Sources */,
+				6B54086C2488E2CA0090D07D /* Frameworks */,
+				6B54086D2488E2CA0090D07D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GreenIntents;
+			productName = GreenIntents;
+			productReference = 6B54086F2488E2CA0090D07D /* GreenIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		23543CF923F45EB60080BDFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Lorenzo Fasolino";
 				TargetAttributes = {
@@ -477,6 +540,9 @@
 					23543D2423F45EB70080BDFE = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 23543D0023F45EB60080BDFE;
+					};
+					6B54086E2488E2CA0090D07D = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -496,6 +562,7 @@
 				23543D0023F45EB60080BDFE /* Homer */,
 				23543D1923F45EB70080BDFE /* HomerTests */,
 				23543D2423F45EB70080BDFE /* HomerUITests */,
+				6B54086E2488E2CA0090D07D /* GreenIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -534,6 +601,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		23543D2323F45EB70080BDFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B54086D2488E2CA0090D07D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -608,6 +682,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6B54086B2488E2CA0090D07D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B5408722488E2CA0090D07D /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -620,6 +702,11 @@
 			isa = PBXTargetDependency;
 			target = 23543D0023F45EB60080BDFE /* Homer */;
 			targetProxy = 23543D2623F45EB70080BDFE /* PBXContainerItemProxy */;
+		};
+		6B5408752488E2CA0090D07D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B54086E2488E2CA0090D07D /* GreenIntents */;
+			targetProxy = 6B5408742488E2CA0090D07D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -760,6 +847,7 @@
 		23543D2F23F45EB70080BDFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Homer/Greenist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -779,6 +867,7 @@
 		23543D3023F45EB70080BDFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Homer/Greenist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -879,6 +968,46 @@
 			};
 			name = Release;
 		};
+		6B5408782488E2CA0090D07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68XJL248VM;
+				INFOPLIST_FILE = GreenIntents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alessandrodestefano.Greenist.GreenIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B5408792488E2CA0090D07D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68XJL248VM;
+				INFOPLIST_FILE = GreenIntents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alessandrodestefano.Greenist.GreenIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -914,6 +1043,15 @@
 			buildConfigurations = (
 				23543D3523F45EB70080BDFE /* Debug */,
 				23543D3623F45EB70080BDFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B5408772488E2CA0090D07D /* Build configuration list for PBXNativeTarget "GreenIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B5408782488E2CA0090D07D /* Debug */,
+				6B5408792488E2CA0090D07D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

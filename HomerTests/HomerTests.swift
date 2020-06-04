@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Homer
+@testable import Greenist
 
 class HomerTests: XCTestCase {
 

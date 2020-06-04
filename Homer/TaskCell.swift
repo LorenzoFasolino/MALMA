@@ -24,7 +24,7 @@ class TaskCell: UITableViewCell {
     var task : Task? {
         willSet{
             if let cellTask = newValue{
-                print("checked\(cellTask.isChecked())")
+                // print("checked\(cellTask.isChecked())")
                 if(cellTask.isChecked()){
                     CategoryIcon.setImage(cellTask.getIcon(true), for: .normal)
                     CheckButton.isSelected = true

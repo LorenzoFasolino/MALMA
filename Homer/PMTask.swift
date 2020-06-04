@@ -15,6 +15,7 @@ class PMTask {
     static let tableName = "Task"
 
     static func getContext() -> NSManagedObjectContext {
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
         return appDelegate.persistentContainer.viewContext

@@ -10,11 +10,48 @@ import Intents
 
 class IntentHandler: INExtension {
     
-    override func handler(for intent: INIntent) -> Any {
-        // This is the default implementation.  If you want different objects to handle different intents,
-        // you can override this and return the handler you want for that particular intent.
+    override func handler(for intent: INIntent) -> Any? {
+        switch intent {
+        case is INSearchForNotebookItemsIntent:
+            return SearchTasksIntentHandler()
+        default:
+            return nil
+        }
+    }
+    
+}
+
+class GreenIntentsHandler: NSObject {
+    
+    public func getPossibleLists(for listName: INSpeakableString) -> [INSpeakableString] {
+        var possibleLists = [INSpeakableString]()
         
-        return self
+        let categories = PMCategory.fetchAllCategory().map { $0.name }
+        
+        for l in categories {
+            if l?.lowercased() == listName.spokenPhrase.lowercased() {
+                return [INSpeakableString(spokenPhrase: l!)]
+            }
+            if (l?.lowercased().contains(listName.spokenPhrase.lowercased()))! || listName.spokenPhrase.lowercased() == "all" {
+                possibleLists.append(INSpeakableString(spokenPhrase: l!))
+            }
+        }
+        return possibleLists
+    }
+
+    public func completeResolveListName(with possibleLists: [INSpeakableString], for listName: INSpeakableString, with completion: @escaping (INSpeakableStringResolutionResult) -> Void) {
+        switch possibleLists.count {
+        case 0:
+            completion(.unsupported())
+        case 1:
+            if possibleLists[0].spokenPhrase.lowercased() == listName.spokenPhrase.lowercased() {
+                completion(.success(with: possibleLists[0]))
+            } else {
+                completion(.confirmationRequired(with: possibleLists[0]))
+            }
+        default:
+            completion(.disambiguation(with: possibleLists))
+        }
     }
     
 }

@@ -32,7 +32,6 @@
 		235EF74123F6D1B2006EAD45 /* PMTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EF73B23F6D1B2006EAD45 /* PMTask.swift */; };
 		235EF74223F6D1B2006EAD45 /* PMAchievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EF73C23F6D1B2006EAD45 /* PMAchievement.swift */; };
 		235EF74323F6D1B2006EAD45 /* PMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EF73D23F6D1B2006EAD45 /* PMUser.swift */; };
-		235EF74423F6D1B2006EAD45 /* PMCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EF73E23F6D1B2006EAD45 /* PMCategory.swift */; };
 		235EF74523F6D1B2006EAD45 /* PMDoneTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EF73F23F6D1B2006EAD45 /* PMDoneTask.swift */; };
 		235EF74723F6D72C006EAD45 /* Populator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EF74623F6D72C006EAD45 /* Populator.swift */; };
 		235EF74A23F6DB3C006EAD45 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 235EF74923F6DB3C006EAD45 /* categories.json */; };
@@ -47,6 +46,8 @@
 		6B54086A2487981A0090D07D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5408692487981A0090D07D /* MainController.swift */; };
 		6B5408722488E2CA0090D07D /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5408712488E2CA0090D07D /* IntentHandler.swift */; };
 		6B5408762488E2CA0090D07D /* GreenIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6B54086F2488E2CA0090D07D /* GreenIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6B54087C2488F04D0090D07D /* SearchTasksIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B54087B2488F04D0090D07D /* SearchTasksIntentHandler.swift */; };
+		6B5408812488FE8E0090D07D /* PMCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235EF73E23F6D1B2006EAD45 /* PMCategory.swift */; };
 		6B5CA63223FAD08F0059D9BB /* AchievementContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5CA63123FAD08F0059D9BB /* AchievementContentView.swift */; };
 		6B81B9D823F59BBF000BFB0A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B81B9D723F59BBF000BFB0A /* Home.storyboard */; };
 		6B81B9E523F6ABD4000BFB0A /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B81B9E423F6ABD4000BFB0A /* Categories.storyboard */; };
@@ -159,6 +160,7 @@
 		6B54086F2488E2CA0090D07D /* GreenIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GreenIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5408712488E2CA0090D07D /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		6B5408732488E2CA0090D07D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B54087B2488F04D0090D07D /* SearchTasksIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTasksIntentHandler.swift; sourceTree = "<group>"; };
 		6B5CA63123FAD08F0059D9BB /* AchievementContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementContentView.swift; sourceTree = "<group>"; };
 		6B81B9D723F59BBF000BFB0A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6B81B9E423F6ABD4000BFB0A /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
@@ -220,9 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				23543D0323F45EB60080BDFE /* Homer */,
+				6B5408702488E2CA0090D07D /* GreenIntents */,
 				23543D1D23F45EB70080BDFE /* HomerTests */,
 				23543D2823F45EB70080BDFE /* HomerUITests */,
-				6B5408702488E2CA0090D07D /* GreenIntents */,
 				23543D0223F45EB60080BDFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -300,9 +302,9 @@
 			isa = PBXGroup;
 			children = (
 				235EF73C23F6D1B2006EAD45 /* PMAchievement.swift */,
-				235EF73E23F6D1B2006EAD45 /* PMCategory.swift */,
 				235EF73F23F6D1B2006EAD45 /* PMDoneTask.swift */,
 				235EF73A23F6D1B2006EAD45 /* PMGoal.swift */,
+				235EF73E23F6D1B2006EAD45 /* PMCategory.swift */,
 				235EF73B23F6D1B2006EAD45 /* PMTask.swift */,
 				235EF73D23F6D1B2006EAD45 /* PMUser.swift */,
 				235EF74623F6D72C006EAD45 /* Populator.swift */,
@@ -335,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5408712488E2CA0090D07D /* IntentHandler.swift */,
+				6B54087B2488F04D0090D07D /* SearchTasksIntentHandler.swift */,
 				6B5408732488E2CA0090D07D /* Info.plist */,
 			);
 			path = GreenIntents;
@@ -647,13 +650,13 @@
 				235EF74523F6D1B2006EAD45 /* PMDoneTask.swift in Sources */,
 				235EF72F23F6D11D006EAD45 /* Achievement+CoreDataProperties.swift in Sources */,
 				90259D4323F5AF8A00926738 /* TaskCollection.swift in Sources */,
+				6B5408812488FE8E0090D07D /* PMCategory.swift in Sources */,
 				235EF74723F6D72C006EAD45 /* Populator.swift in Sources */,
 				23EF213323FBEC6900AB9781 /* Goal+CoreDataProperties.swift in Sources */,
 				6B5CA63223FAD08F0059D9BB /* AchievementContentView.swift in Sources */,
 				90AB077023F8390000D930D5 /* AchievementDetailViewController.swift in Sources */,
 				9A88D59C23FBEB0300FD65BB /* OrderArray.swift in Sources */,
 				235EF72E23F6D11D006EAD45 /* Achievement+CoreDataClass.swift in Sources */,
-				235EF74423F6D1B2006EAD45 /* PMCategory.swift in Sources */,
 				235EF73623F6D11D006EAD45 /* User+CoreDataClass.swift in Sources */,
 				235EF73523F6D11D006EAD45 /* Category+CoreDataProperties.swift in Sources */,
 				90259D4123F5A30E00926738 /* TaskCell.swift in Sources */,
@@ -687,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B5408722488E2CA0090D07D /* IntentHandler.swift in Sources */,
+				6B54087C2488F04D0090D07D /* SearchTasksIntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

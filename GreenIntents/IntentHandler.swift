@@ -26,14 +26,14 @@ class GreenIntentsHandler: NSObject {
     public func getPossibleLists(for listName: INSpeakableString) -> [INSpeakableString] {
         var possibleLists = [INSpeakableString]()
         
-        let categories = PMCategory.fetchAllCategory().map { $0.name }
+        let categories = ["water", "energy", "garbage", "transport", "food"]
         
         for l in categories {
-            if l?.lowercased() == listName.spokenPhrase.lowercased() {
-                return [INSpeakableString(spokenPhrase: l!)]
+            if l.lowercased() == listName.spokenPhrase.lowercased() {
+                return [INSpeakableString(spokenPhrase: l)]
             }
-            if (l?.lowercased().contains(listName.spokenPhrase.lowercased()))! || listName.spokenPhrase.lowercased() == "all" {
-                possibleLists.append(INSpeakableString(spokenPhrase: l!))
+            if (l.lowercased().contains(listName.spokenPhrase.lowercased())) || listName.spokenPhrase.lowercased() == "all" {
+                possibleLists.append(INSpeakableString(spokenPhrase: l))
             }
         }
         return possibleLists

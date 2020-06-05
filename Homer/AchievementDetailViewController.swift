@@ -9,6 +9,8 @@
 import SceneKit
 import UIKit
 
+import GreenCore
+
 class AchievementDetailViewController: UIViewController {
     @IBOutlet var detailSceneView: SCNView!
     @IBOutlet var achievementDesc: UILabel!

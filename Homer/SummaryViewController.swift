@@ -9,6 +9,8 @@
 import UIKit
 import SceneKit
 
+import GreenCore
+
 class SummaryViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private let spacing: CGFloat = 12.0
@@ -48,7 +50,7 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate,UICollec
         achievementCollection.delegate = self
         achievementCollection.dataSource = self
         
-        achievements = PMAchievement.fetchAllAchievement()
+        achievements = PMAchievement.fetchAllAchievement(appContext: AppContext.getContext())
         
         
         
@@ -62,14 +64,14 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate,UICollec
         
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-             ecoPoints  = PMUser.fetchUser().totEcoPoints
-             savings = PMUser.fetchUser().totSavings
+             ecoPoints  = PMUser.fetchUser(appContext: AppContext.getContext()).totEcoPoints
+             savings = PMUser.fetchUser(appContext: AppContext.getContext()).totSavings
         case 1:
-             ecoPoints  = PMUser.fetchUser().getEcoPointsOfMonth()
-             savings = PMUser.fetchUser().getSavingsOfMonth()
+             ecoPoints  = PMUser.fetchUser(appContext: AppContext.getContext()).getEcoPointsOfMonth(appContext: AppContext.getContext())
+             savings = PMUser.fetchUser(appContext: AppContext.getContext()).getSavingsOfMonth(appContext: AppContext.getContext())
         case 2:
-             ecoPoints  = PMUser.fetchUser().getEcoPointsOfDay()
-             savings = PMUser.fetchUser().getSavingsOfDay()
+             ecoPoints  = PMUser.fetchUser(appContext: AppContext.getContext()).getEcoPointsOfDay(appContext: AppContext.getContext())
+             savings = PMUser.fetchUser(appContext: AppContext.getContext()).getSavingsOfDay(appContext: AppContext.getContext())
         default:
             print("Unexpected behaviour")
         }
@@ -78,7 +80,7 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate,UICollec
         savingsText.text = String(format: "%.2f$", savings)
         ecoPointsText.text = "\(ecoPoints)EP"
         
-        achievements = PMAchievement.fetchAllAchievement()
+        achievements = PMAchievement.fetchAllAchievement(appContext: AppContext.getContext())
         self.achievementCollection.reloadData()
         
     }
@@ -88,8 +90,8 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate,UICollec
         
         switch sender.selectedSegmentIndex{
         case 0:
-            let ecoPoints  = PMUser.fetchUser().totEcoPoints
-            let savings = PMUser.fetchUser().totSavings
+            let ecoPoints  = PMUser.fetchUser(appContext: AppContext.getContext()).totEcoPoints
+            let savings = PMUser.fetchUser(appContext: AppContext.getContext()).totSavings
             
             savingsText.text = String(format: "%.2f$", savings)
             ecoPointsText.text = "\(ecoPoints)EP"
@@ -97,16 +99,16 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate,UICollec
             print("first segment")
             
         case 1:
-            let ecoPoints  = PMUser.fetchUser().getEcoPointsOfMonth()
-            let savings = PMUser.fetchUser().getSavingsOfMonth()
+            let ecoPoints  = PMUser.fetchUser(appContext: AppContext.getContext()).getEcoPointsOfMonth(appContext: AppContext.getContext())
+            let savings = PMUser.fetchUser(appContext: AppContext.getContext()).getSavingsOfMonth(appContext: AppContext.getContext())
             
             savingsText.text = String(format: "%.2f$", savings)
             ecoPointsText.text = "\(ecoPoints)EP"
             print("second segment")
         case 2:
             print("third segment")
-            let ecoPoints  = PMUser.fetchUser().getEcoPointsOfDay()
-            let savings = PMUser.fetchUser().getSavingsOfDay()
+            let ecoPoints  = PMUser.fetchUser(appContext: AppContext.getContext()).getEcoPointsOfDay(appContext: AppContext.getContext())
+            let savings = PMUser.fetchUser(appContext: AppContext.getContext()).getSavingsOfDay(appContext: AppContext.getContext())
                        
             savingsText.text = String(format: "%.2f$", savings)
             ecoPointsText.text = "\(ecoPoints)EP"

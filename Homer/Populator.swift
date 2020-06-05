@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import GreenCore
 
 class Populator {
     static func populateDB() {
         // @discardableResult
-        PMUser.newUser()
+        PMUser.newUser(appContext: AppContext.getContext())
 
         let categories = jsonRead(fileName: "categories")
 
@@ -19,7 +20,7 @@ class Populator {
 
         for category in categories {
             // @discardableResult
-            PMCategory.newCategory(imageName: category["image"] as! String, name: category["name"] as! String)
+            PMCategory.newCategory(imageName: category["image"] as! String, name: category["name"] as! String, appContext: AppContext.getContext())
         }
 
         let tasks = jsonRead(fileName: "task")
@@ -27,7 +28,7 @@ class Populator {
         for task in tasks {
             print("category = \(task["category"] as! String)")
 
-            let category = PMCategory.fetchByName(name: task["category"] as! String)
+            let category = PMCategory.fetchByName(name: task["category"] as! String, appContext: AppContext.getContext())
 
             let id = Int32(task["id"] as! String)
             let desc = task["desc"] as! String
@@ -35,7 +36,7 @@ class Populator {
             let savings = Float(task["savings"] as! String)
             let weekly = Bool(task["weekly"] as! String)
 
-            let t = PMTask.newTask(id: id!, desc: desc, ecoPoint: ecoP!, savings: savings!, state: "enabled", weekly: weekly!, categoty: category[0])
+            let t = PMTask.newTask(id: id!, desc: desc, ecoPoint: ecoP!, savings: savings!, state: "enabled", weekly: weekly!, categoty: category[0], appContext: AppContext.getContext())
 
             category[0].addTask(task: t)
         }
@@ -48,7 +49,7 @@ class Populator {
             let desc = achievement["desc"] as! String
 
             // @discardableResult
-            PMAchievement.newAchievement(imageName: image, name: name, desc: desc)
+            PMAchievement.newAchievement(imageName: image, name: name, desc: desc, appContext: AppContext.getContext())
         }
 
         let goals = jsonRead(fileName: "goal")
@@ -57,16 +58,16 @@ class Populator {
             let category = goal["category"] as! String
             let achievementName = goal["achievement"] as! String
 
-            let achievement = PMAchievement.fetchByName(name: achievementName)
+            let achievement = PMAchievement.fetchByName(name: achievementName, appContext: AppContext.getContext())
 
             let goalNum = Int32(goal["goal"] as! String)
             let below = Bool(goal["below"] as! String)
 
             // @discardableResult
-            PMGoal.newGoal(category: category, achivement: achievement[0], goalNum: goalNum!, below: below!)
+            PMGoal.newGoal(category: category, achivement: achievement[0], goalNum: goalNum!, below: below!, appContext: AppContext.getContext())
         }
 
-        PMTask.saveContext()
+        PMTask.saveContext(appContext: AppContext.getContext())
     }
 
     static func jsonRead(fileName: String) -> [[String: Any]] {

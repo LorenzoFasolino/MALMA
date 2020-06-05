@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+import GreenCore
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "initialized")
         }
         
-        let cats = PMCategory.fetchAllCategory()
+        let cats = PMCategory.fetchAllCategory(appContext: AppContext.getContext())
         
         for cat in cats {
             print("Category = \(cat.name!)")

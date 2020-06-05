@@ -8,6 +8,8 @@
 
 import UIKit
 
+import GreenCore
+
 class TaskTableViewController: UITableViewController {
     var tasks: [Task] = []
 //    NotificationCenter.default.addObserver(self, selector: #selector(self.reciveAchievementNotify(), name: Notification.Name("PremioRicevuto"), object: nil)
@@ -53,7 +55,7 @@ class TaskTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tasks = PMTask.fetchUnselectedTask(true)
+        self.tasks = PMTask.fetchUnselectedTask(true, appContext: AppContext.getContext())
         self.tableView.reloadData()
         
         
@@ -109,7 +111,7 @@ class TaskTableViewController: UITableViewController {
      } */
     
     @IBAction func refresh(_ sender: Any) {
-        self.tasks = PMTask.fetchUnselectedTask(true)
+        self.tasks = PMTask.fetchUnselectedTask(true, appContext: AppContext.getContext())
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
@@ -137,7 +139,7 @@ class TaskTableViewController: UITableViewController {
             
             let task = self.tasks[indexPath.row]
             task.priority = 0
-            task.disable()
+            task.disable(appContext: AppContext.getContext())
             self.tasks.remove(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath], with: .fade)

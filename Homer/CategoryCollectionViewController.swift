@@ -8,6 +8,8 @@
 
 import UIKit
 
+import GreenCore
+
 private let reuseIdentifier = "Cell"
 
 class CategoryCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -17,7 +19,7 @@ class CategoryCollectionViewController: UICollectionViewController, UICollection
 
     let categoriesDataSource = CategoriesDataSource()
     
-    var categories:[Category] = []
+    var categories:[GreenCore.Category] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ class CategoryCollectionViewController: UICollectionViewController, UICollection
         // Register cell classes
         collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        categories = PMCategory.fetchAllCategory()
+        categories = PMCategory.fetchAllCategory(appContext: AppContext.getContext())
 
         // Do any additional setup after loading the view.
     }

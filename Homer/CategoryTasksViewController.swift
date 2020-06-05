@@ -8,6 +8,8 @@
 
 import UIKit
 
+import GreenCore
+
 class CategoryTasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segment!.selectedSegmentIndex == 0 {
@@ -33,7 +35,7 @@ class CategoryTasksViewController: UIViewController, UITableViewDelegate, UITabl
         cell.descriptionLabel.text = task.desc
         cell.savingsLabel.text = String(format: "%.2f$", task.savings)
         cell.ecoPointsLabel.text = "\(task.ecoPoints)EP"
-        cell.checkBox.isSelected = task.isChecked()
+        cell.checkBox.isSelected = task.isChecked(appContext: AppContext.getContext())
         cell.checkBox.isHidden = false
         cell.weeklyLabel.isHidden = (!task.weekly)
         cell.enableButton.isHidden = true
@@ -68,7 +70,7 @@ class CategoryTasksViewController: UIViewController, UITableViewDelegate, UITabl
         let deleteAction = UIContextualAction(style: .destructive, title: "Disable") { (action: UIContextualAction, view: UIView, success: (Bool) -> Void) in
             
             let task: Task = self.allTasks[indexPath.row]
-            task.disable()
+            task.disable(appContext: AppContext.getContext())
             tableView.reloadRows(at: [indexPath], with: .right)
             
             print("delete!")
@@ -116,7 +118,7 @@ class CategoryTasksViewController: UIViewController, UITableViewDelegate, UITabl
         segment!.sizeToFit()
         segment!.tintColor = UIColor(named: "dark-green")
         segment!.selectedSegmentIndex = 0;
-        segment!.addTarget(self, action: Selector("segmentValueChanged"), for: .valueChanged)
+        segment!.addTarget(self, action: #selector(self.segmentValueChanged), for: .valueChanged)
         
         navigationItem.titleView = segment
         
@@ -162,7 +164,7 @@ class CategoryTasksViewController: UIViewController, UITableViewDelegate, UITabl
     
     func reloadTasks() {
         print("ricarico i task")
-        NStasks = PMCategory.fetchByName(name: category)[0].tasks!
+        NStasks = PMCategory.fetchByName(name: category, appContext: AppContext.getContext())[0].tasks!
         allTasks = []
         disabledTasks = []
         

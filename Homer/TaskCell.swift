@@ -8,6 +8,8 @@
 
 import UIKit
 
+import GreenCore
+
 class TaskCell: UITableViewCell {
 
     
@@ -25,7 +27,7 @@ class TaskCell: UITableViewCell {
         willSet{
             if let cellTask = newValue{
                 // print("checked\(cellTask.isChecked())")
-                if(cellTask.isChecked()){
+                if(cellTask.isChecked(appContext: AppContext.getContext())){
                     CategoryIcon.setImage(cellTask.getIcon(true), for: .normal)
                     CheckButton.isSelected = true
                     checked = true
@@ -68,10 +70,10 @@ class TaskCell: UITableViewCell {
     private func toggleCheck(){
         print("toggle")
         if(checked){
-            task?.unCheck()
+            task?.unCheck(appContext: AppContext.getContext())
             checked = false
         }else{
-            task?.check()
+            task?.check(appContext: AppContext.getContext())
             checked = true
         }
         CheckButton.isSelected.toggle()

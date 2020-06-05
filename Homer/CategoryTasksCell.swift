@@ -8,6 +8,8 @@
 
 import UIKit
 
+import GreenCore
+
 class CategoryTasksCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var weeklyLabel: UILabel!
@@ -39,9 +41,9 @@ class CategoryTasksCell: UITableViewCell {
 
     @IBAction func checkboxPressed(_ sender: Any) {
         if checkBox.isSelected {
-            task?.unCheck()
+            task?.unCheck(appContext: AppContext.getContext())
         } else {
-            task?.check()
+            task?.check(appContext: AppContext.getContext())
         }
         checkBox.isSelected = (!checkBox.isSelected)
     }
@@ -51,7 +53,7 @@ class CategoryTasksCell: UITableViewCell {
             checkBox.isHidden = false
             enableButton.isHidden = true
         }
-        task?.enable()
+        task?.enable(appContext: AppContext.getContext())
         reloadTasks()
         let indexPath = (tableView?.indexPath(for: self))!
         DispatchQueue.main.async {

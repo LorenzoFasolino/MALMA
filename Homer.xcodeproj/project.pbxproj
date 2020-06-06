@@ -137,6 +137,7 @@
 		33B9D7ED23FA8D6300BE1FEA /* CategoryTasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryTasks.storyboard; sourceTree = "<group>"; };
 		33B9D7EF23FA8DDC00BE1FEA /* CategoryTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTasksViewController.swift; sourceTree = "<group>"; };
 		33B9D7F123FA981400BE1FEA /* CategoryTasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTasksCell.swift; sourceTree = "<group>"; };
+		6B370168248BA0FC0006B8EE /* GreenIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GreenIntents.entitlements; sourceTree = "<group>"; };
 		6B540864248792A00090D07D /* Greenist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Greenist.entitlements; sourceTree = "<group>"; };
 		6B540865248794A50090D07D /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		6B5408692487981A0090D07D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -295,6 +296,7 @@
 		6B5408702488E2CA0090D07D /* GreenIntents */ = {
 			isa = PBXGroup;
 			children = (
+				6B370168248BA0FC0006B8EE /* GreenIntents.entitlements */,
 				6B5408712488E2CA0090D07D /* IntentHandler.swift */,
 				6B54087B2488F04D0090D07D /* SearchTasksIntentHandler.swift */,
 				6B5408732488E2CA0090D07D /* Info.plist */,
@@ -940,6 +942,7 @@
 		6B5408782488E2CA0090D07D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GreenIntents/GreenIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68XJL248VM;
 				INFOPLIST_FILE = GreenIntents/Info.plist;
@@ -960,6 +963,7 @@
 		6B5408792488E2CA0090D07D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GreenIntents/GreenIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68XJL248VM;
 				INFOPLIST_FILE = GreenIntents/Info.plist;

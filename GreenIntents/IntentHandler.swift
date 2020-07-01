@@ -7,6 +7,7 @@
 //
 
 import Intents
+import GreenCore
 
 class IntentHandler: INExtension {
     
@@ -26,16 +27,17 @@ class GreenIntentsHandler: NSObject {
     public func getPossibleLists(for listName: INSpeakableString) -> [INSpeakableString] {
         var possibleLists = [INSpeakableString]()
         
-        let categories = ["water", "energy", "garbage", "transport", "food"]
+        let categories = StaticInit().categories
         
         for l in categories {
-            if l.lowercased() == listName.spokenPhrase.lowercased() {
-                return [INSpeakableString(spokenPhrase: l)]
+            if l.name.lowercased() == listName.spokenPhrase.lowercased() {
+                return [INSpeakableString(spokenPhrase: l.name)]
             }
-            if (l.lowercased().contains(listName.spokenPhrase.lowercased())) || listName.spokenPhrase.lowercased() == "all" {
-                possibleLists.append(INSpeakableString(spokenPhrase: l))
+            if (l.name.lowercased().contains(listName.spokenPhrase.lowercased())) || listName.spokenPhrase.lowercased() == "tutti" {
+                possibleLists.append(INSpeakableString(spokenPhrase: l.name))
             }
         }
+        print("possible lists = \(possibleLists)")
         return possibleLists
     }
 

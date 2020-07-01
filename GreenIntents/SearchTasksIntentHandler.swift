@@ -8,6 +8,7 @@
 
 import Foundation
 import Intents
+import GreenCore
 
 class SearchTasksIntentHandler: GreenIntentsHandler, INSearchForNotebookItemsIntentHandling {
     
@@ -32,25 +33,25 @@ class SearchTasksIntentHandler: GreenIntentsHandler, INSearchForNotebookItemsInt
     }
     
     func handle(intent: INSearchForNotebookItemsIntent, completion: @escaping (INSearchForNotebookItemsIntentResponse) -> Void) {
-        let categories = ["water", "energy", "garbage", "transport", "food"]
+        let categories = StaticInit().categories
         guard
             let title = intent.title,
-            let list = categories.filter({ $0.lowercased() == title.spokenPhrase.lowercased()}).first
+            let list = categories.filter({ $0.name.lowercased() == title.spokenPhrase.lowercased()}).first
         else {
             completion(INSearchForNotebookItemsIntentResponse(code: .failure, userActivity: nil))
             return
         }
 
         let response = INSearchForNotebookItemsIntentResponse(code: .success, userActivity: nil)
-        response.tasks = list.map {
+        response.tasks = list.tasks.map {
             return INTask(title: INSpeakableString(spokenPhrase: $0.description),
-                          status: $0.isLowercase ? INTaskStatus.completed : INTaskStatus.notCompleted,
+                          status: $0.done ? INTaskStatus.completed : INTaskStatus.notCompleted,
                           taskType: INTaskType.notCompletable,
                           spatialEventTrigger: nil,
                           temporalEventTrigger: nil,
                           createdDateComponents: nil,
                           modifiedDateComponents: nil,
-                          identifier: "\(list.description)\t\($0.description)")
+                          identifier: "\(list.name)\t\($0.description)")
         }
         completion(response)
     }
